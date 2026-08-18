@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "enterprise-knowledge-retrieval"
+version = "0.4.0"
+description = "A ready-to-use desktop retrieval system for enterprise knowledge bases and applied industrial AI."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "Apache-2.0" }
+authors = [{ name = "Enterprise Knowledge Retrieval contributors" }]
+keywords = ["enterprise-search", "document-retrieval", "enterprise-knowledge-base", "knowledge-management", "industrial-ai", "manufacturing-ai", "rag", "bm25", "local-first"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "License :: OSI Approved :: Apache Software License",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Operating System :: Microsoft :: Windows",
+]
+dependencies = [
+  "PySide6>=6.8,<6.10",
+  "pypdf>=5,<7",
+  "openpyxl>=3.1,<4",
+]
+
+[project.optional-dependencies]
+build = ["PyInstaller>=6.14,<7"]
+
+[project.gui-scripts]
+enterprise-knowledge-retrieval = "enterprise_knowledge_retrieval:main"
+
+[project.urls]
+Homepage = "https://github.com/Mege98/enterprise-knowledge-retrieval"
+Issues = "https://github.com/Mege98/enterprise-knowledge-retrieval/issues"
+
+[tool.setuptools]
+py-modules = ["enterprise_knowledge_retrieval", "rag_core"]
